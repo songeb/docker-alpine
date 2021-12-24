@@ -1,0 +1,13 @@
+version: "3"
+services:
+  app:
+    image: local/alpine-rails:alpha-1
+    container_name: api
+    tty: true
+    ports:
+      - 80:8080
+      - 3000:3000 # development port
+networks:
+  default:
+    external:
+      name: development_default
